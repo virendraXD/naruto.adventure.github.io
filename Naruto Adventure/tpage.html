@@ -55,7 +55,7 @@
         let day = localStorage.getItem('day') || 1;
         let health = localStorage.getItem('health') || 20;
         let strength = parseFloat(localStorage.getItem('strength')) || 0.0;
-        let stamina = localStorage.getItem('stamina') || 5;
+        let stamina = parseInt(localStorage.getItem('stamina')) || 5;
 
         function openSettings() {
             // Redirect to the game page or load game content
