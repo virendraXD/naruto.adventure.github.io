@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tpage.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Main content container -->
+    <div class="container">
+        <!-- <h1 class="title">Hidden leaf village</h1> -->
+        <!-- Your main game content here -->
+        <div class="image-container">
+            <img class="Hidden_leaf_village" src="/Naruto Assests/naruto_sleeping.jpg" alt="Description of the image">
+        </div>
+        <div class="hint">
+            <p>Hint 1: {hint_1}</p>
+        </div>
+        <div class="navigation">
+            <button onclick="wakeUp()">Wake up</button>
+        </div>
+    </div>
+
+    <div id="side-menu">
+        <button id="menu-button">Menu</button>
+        <nav>
+            <!-- <div class="day-counter">
+                <p>Day: <span id="day">1</span></p>
+            </div> -->
+            <div class="attributes">
+                <p>Day: <span id="day">1</span></p>
+                <h2>Stats</h2>
+                <p>Health: <span id="health">20</span></p>
+                <p>Strength: <span id="strength">0</span></p>
+                <p>Stamina: <span id="stamina">5</span></p>
+            </div>
+            <div class="settings">
+                <button class="settings-btn" onclick="openSettings()">Settings</button>
+            </div>
+        </nav>
+      </div>
+
+      <script>
+        function wakeUp() {
+        window.location.href = "home.html";
+        }
+      </script>
+</body>
+</html>

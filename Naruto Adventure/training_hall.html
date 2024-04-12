@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="training_hall.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Main content container -->
+    <div class="container">
+        <h1 class="title">Training Hall</h1>
+        <div class="image-container">
+            <img class="Training_hall" src="/Naruto Assests/training_hall.jpg" alt="Training Hall image">
+        </div>
+        <!-- Message for attribute changes -->
+        <div class="message">
+            <p>+5 stamina</p>
+            <p>-5 Strength</p>
+        </div> 
+        <div class="navigation">
+            <!-- Go Back button -->
+            <button class="goback-btn" onclick="goBack()">Go Back</button>
+        </div>
+    </div>
+
+    <div id="side-menu">
+        <button id="menu-button">Menu</button>
+        <nav>
+            <div class="attributes">
+                <h2>Stats</h2>
+                <p>Health: <span id="health">20</span></p>
+                <p>Strength: <span id="strength">0</span></p>
+                <p>Stamina: <span id="stamina">5</span></p>
+            </div>
+        </nav>
+      </div>
+
+      <script>
+        const menuButton = document.getElementById('menu-button');
+        const sideMenu = document.getElementById('side-menu');
+
+        menuButton.addEventListener('click', () => {
+        sideMenu.classList.toggle('open');
+        })
+
+        // Global variables for attributes
+        let health = localStorage.getItem('health') || 20;
+        let strength = parseFloat(localStorage.getItem('strength')) || 0.0;
+        let stamina = localStorage.getItem('stamina') || 5;
+
+        function goBack() {
+            window.location.href = "tpage.html";
+        }
+
+        // Load the attribute values from local storage when the page loads
+        document.getElementById('health').innerHTML = health;
+        document.getElementById('strength').innerHTML = strength.toFixed(1);
+        document.getElementById('stamina').innerHTML = stamina;
+    </script>
+</body>
+</html>

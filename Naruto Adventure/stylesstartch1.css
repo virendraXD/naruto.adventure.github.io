@@ -1,0 +1,49 @@
+/* Body styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #336699; /* Background color */
+    display: flex;
+}
+
+/* Main container */
+.container {
+    flex-grow: 1;
+    padding: 20px;
+    color: #fff; /* Text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Side Navigation styles */
+.sidenav {
+    height: 100%;
+    width: 0; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    right: 0; /* Position on the right side */
+    background-color: #111; /* Menu background color */
+    overflow-x: hidden;
+    transition: 0.5s; /* Animation duration */
+    padding-top: 60px;
+}
+
+.menu-toggle {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #fff; /* Button background color */
+    color: #336699; /* Button text color */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 20px; /* Space between button and menu items */
+    z-index: 999; /* Ensure button is above other elements */
+}
+
+.menu-toggle:hover {
+    background-color: #ddd; /* Button hover background color */
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main content container -->
+    <div class="container">
+        <h1 class="title">Missions</h1>
+        <!-- Mission list -->
+        <div class="mission-list">
+            <h2>Mission List</h2>
+            <ul>
+                <li>
+                    <h3>Mission 1: Retrieve Lost Scrolls</h3>
+                    <p>Description: Help retrieve the lost scrolls from the Hidden Leaf Forest.</p>
+                    <p>Reward: 100 Ryo</p>
+                    <button onclick="acceptMission(1)">Accept Mission</button>
+                </li>
+                <li>
+                    <h3>Mission 2: Escort the Merchant</h3>
+                    <p>Description: Escort the merchant safely to the Land of Fire border.</p>
+                    <p>Reward: 200 Ryo</p>
+                    <button onclick="acceptMission(2)">Accept Mission</button>
+                </li>
+                <li>
+                    <h3>Mission 3: Investigate Strange Activity</h3>
+                    <p>Description: Investigate the strange activity reported near the village outskirts.</p>
+                    <p>Reward: 150 Ryo</p>
+                    <button onclick="acceptMission(3)">Accept Mission</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript for handling mission actions -->
+    <script>
+        function acceptMission(missionId) {
+            // You can add code here to handle accepting missions
+            alert("Mission " + missionId + " accepted!");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tpage.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Main content container -->
+    <div class="container">
+        <h1 class="title">Hidden leaf village</h1>
+        <!-- Your main game content here -->
+        <div class="image-container">
+            <img class="Hidden_leaf_village" src="/Naruto Assests/hidden_leafe_village.jpg" alt="Description of the image">
+        </div>
+        <div class="navigation">
+            <!-- <h2>Navigation</h2> -->
+            <button onclick="goToHome()">Home</button>
+            <button onclick="goToHokageResidence()">Hokage Residence</button>
+            <button onclick="goToTrainingHall()">Training Hall</button>
+            <button onclick="goToForest()">Shikkotsu Forest</button>
+        </div>
+    </div>
+
+    <div id="side-menu">
+        <button id="menu-button">Menu</button>
+        <nav>
+            <!-- <div class="day-counter">
+                <p>Day: <span id="day">1</span></p>
+            </div> -->
+            <div class="attributes">
+                <p>Day: <span id="day">1</span></p>
+                <h2>Stats</h2>
+                <p>Health: <span id="health">20</span></p>
+                <p>Strength: <span id="strength">0</span></p>
+                <p>Stamina: <span id="stamina">5</span></p>
+                <h2>Mission</h2>
+            </div>
+            <div class="settings">
+                <button class="settings-btn" onclick="openSettings()">Settings</button>
+            </div>
+        </nav>
+      </div>
+
+      <script>
+        const menuButton = document.getElementById('menu-button');
+        const sideMenu = document.getElementById('side-menu');
+
+        menuButton.addEventListener('click', () => {
+        sideMenu.classList.toggle('open');
+        })
+
+        // Global variables for attributes
+        let day = localStorage.getItem('day') || 1;
+        let health = localStorage.getItem('health') || 20;
+        let strength = parseFloat(localStorage.getItem('strength')) || 0.0;
+        let stamina = localStorage.getItem('stamina') || 5;
+
+        function openSettings() {
+            // Redirect to the game page or load game content
+            window.location.href = "settings.html";
+        }
+
+        function goToHome() {
+            window.location.href = "home.html";
+        }
+
+        function goToHokageResidence() {
+            // Code to navigate to Hokage Residence
+            window.location.href = "hokageres.html";
+        }
+
+        function goToTrainingHall() {
+            // Decrease the player's stamina by 5
+            stamina -= 5;
+
+            // Increase the player's strength by 0.5
+            strength += 5;
+
+            // Update the player's attributes on the screen
+            document.getElementById('stamina').innerHTML = stamina;
+            document.getElementById('strength').innerHTML = strength.toFixed(1);
+            
+            // Save the attribute values in local storage
+            // localStorage.setItem('health', health);
+            localStorage.setItem('strength', strength);
+            localStorage.setItem('stamina', stamina);
+            
+            window.location.href = "training_hall.html";
+        }
+
+        function goToForest() {
+            // Code to navigate to Hokage Residence
+            window.location.href = "forest.html";
+        }
+
+            // Load the attribute values from local storage when the page loads
+            document.getElementById('day').innerHTML = day;
+            document.getElementById('health').innerHTML = health;
+            document.getElementById('strength').innerHTML = strength.toFixed(1);
+            document.getElementById('stamina').innerHTML = stamina;
+        
+    </script>
+</body>
+</html>

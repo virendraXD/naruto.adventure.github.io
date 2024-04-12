@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Character</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main content container -->
+    <div class="container">
+        <h1 class="title">Choose Your Character</h1>
+        <!-- Character selection options -->
+        <div class="character-selection">
+            <h2>Select your character:</h2>
+            <button onclick="chooseCharacter('Naruto')">Naruto Uzumaki</button>
+            <button onclick="chooseCharacter('Sasuke')">Sasuke Uchiha</button>
+            <button onclick="chooseCharacter('Sakura')">Sakura Haruno</button>
+            <!-- Add more character options as needed -->
+        </div>
+    </div>
+
+    <!-- JavaScript for handling character selection -->
+    <script>
+        function chooseCharacter(characterName) {
+            // You can add code here to handle character selection
+            // alert("You have chosen " + characterName + " as your character!");
+            // Redirect to the main game interface
+            window.location.href = "tpage.html";
+        }
+    </script>
+</body>
+</html>

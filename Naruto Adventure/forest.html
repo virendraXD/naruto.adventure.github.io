@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Main content container -->
+    <div class="container">
+        <h1 class="title">Shikkotsu Forest</h1>
+        <div class="image-container">
+            <img class="Naruto_house" src="/Naruto Assests/shikkotsu_forest.jpg" alt="Shikkotsu Forest">
+        </div>
+        <div class="navigation">
+            <!-- Go Back button -->
+            <button class="fight_mizuki-btn" onclick="fight()">Fight Mizuki</button>
+            <button class="goback-btn" onclick="goBack()">Go Back</button>
+        </div>
+    </div>
+
+    <div id="side-menu">
+        <button id="menu-button">Menu</button>
+        <nav>
+            <div class="attributes">
+                <p>Day: <span id="day">1</span></p>
+                <h2>Stats</h2>
+                <p>Health: <span id="health">20</span></p>
+                <p>Strength: <span id="strength">0</span></p>
+                <p>Stamina: <span id="stamina">5</span></p>
+            </div>
+        </nav>
+      </div>
+
+      <script>
+        const menuButton = document.getElementById('menu-button');
+        const sideMenu = document.getElementById('side-menu');
+
+        menuButton.addEventListener('click', () => {
+        sideMenu.classList.toggle('open');
+        })
+
+        // Global variables for attributes
+        let day = parseInt(localStorage.getItem('day')) || 1;
+        let health = localStorage.getItem('health') || 20;
+        let strength = parseFloat(localStorage.getItem('strength')) || 0.0;
+        let stamina = localStorage.getItem('stamina') || 5;
+
+        // Add this function to your JavaScript code
+        function goToSleepAndIncrementDay() {
+        day += 1;
+        
+        document.getElementById('day').innerHTML = day;
+    
+        // Save the new day value to local storage
+        localStorage.setItem('day', day);
+    
+        // Navigate to the sleep page
+        window.location.href = "wake_up.html";
+        }
+
+        function goBack() {
+            window.location.href = "tpage.html";
+        }
+
+        // Load the attribute values from local storage when the page loads
+        document.getElementById('day').innerHTML = day;
+        document.getElementById('health').innerHTML = health;
+        document.getElementById('strength').innerHTML = strength.toFixed(1);
+        document.getElementById('stamina').innerHTML = stamina;
+    </script>
+</body>
+</html>

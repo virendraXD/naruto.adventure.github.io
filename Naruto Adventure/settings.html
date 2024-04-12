@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="settings.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Main content container -->
+    <div class="container">
+        <h1 class="title">Settings</h1>
+        <div class="navigation">
+            <button class="resetday-btn" onclick="resetDay()">Reset Days</button>
+            <button class="resetstrength-btn" onclick="resetStrength()">Reset Strength</button>
+            <button class="resetstamina-btn" onclick="resetStamina()">Reset Stamina</button>
+            <button class="goback-btn" onclick="goBack()">Go Back</button>
+        </div>
+    </div>
+
+    <div id="side-menu">
+        <button id="menu-button">Menu</button>
+        <nav>
+            <div class="attributes">
+                <h2>Stats</h2>
+                <p>Health: <span id="health">20</span></p>
+                <p>Strength: <span id="strength">0</span></p>
+                <p>Stamina: <span id="stamina">5</span></p>
+            </div>
+        </nav>
+      </div>
+
+      <script>
+        const menuButton = document.getElementById('menu-button');
+        const sideMenu = document.getElementById('side-menu');
+
+        menuButton.addEventListener('click', () => {
+        sideMenu.classList.toggle('open');
+        })
+
+        // Global variables for attributes
+        let day = 1;
+        let health = 20;
+        let strength = 0;
+        let stamina = 5;
+
+        function resetDay() {
+            day = 0;
+            document.getElementById('day').innerHTML = day;
+        }
+
+        function resetStrength() {
+            strength = 0;
+            document.getElementById('strength').innerHTML = strength;
+        }
+
+        function resetStamina() {
+            stamina = 0;
+            document.getElementById('stamina').innerHTML = stamina;
+        }
+
+
+        function goBack() {
+            window.location.href = "tpage.html";
+        }
+
+        // Update the strength value in local storage on each page load
+        localStorage.setItem('day', day);
+        localStorage.setItem('strength', strength);
+        localStorage.setItem('stamina', stamina);
+
+    </script>
+</body>
+</html>
